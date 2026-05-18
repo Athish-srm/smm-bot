@@ -5,7 +5,13 @@ import time
 import os
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-ADMIN_ID = int(os.getenv("ADMIN_ID"))
+ADMIN_ID = os.getenv("ADMIN_ID")
+
+if not BOT_TOKEN or not ADMIN_ID:
+    print("❌ Missing BOT_TOKEN or ADMIN_ID")
+    exit()
+
+ADMIN_ID = int(ADMIN_ID)
 
 reply_wait = {}
 
